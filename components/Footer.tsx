@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { COMPANY_ADDRESS, COMPANY_PHONE, COMPANY_WHATSAPP, LOGO_WHITE_URL } from '../constants';
+import { COMPANY_ADDRESS, COMPANY_PHONE, COMPANY_WHATSAPP } from '../constants';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -16,13 +16,16 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-12 border-b border-gray-800 pb-12 mb-12">
           <div className="col-span-1 md:col-span-1">
-             {/* Logo Area */}
-             <div className="mb-6 cursor-pointer inline-block" onClick={() => handleNav('/')}>
-               <img 
-                 src={LOGO_WHITE_URL} 
-                 alt="Seaduf Furniture" 
-                 className="h-16 w-auto object-contain" 
-               />
+             {/* Logo Area - CSS Styled Text Logo */}
+             <div className="mb-6 cursor-pointer group inline-block" onClick={() => handleNav('/')}>
+               <div className="flex flex-col items-start leading-none">
+                 <span className="font-heading font-bold text-3xl md:text-4xl text-white leading-none tracking-tighter group-hover:text-brand-orange transition-colors">
+                   Seaduf
+                 </span>
+                 <span className="text-[10px] md:text-xs font-bold text-gray-400 tracking-[0.35em] uppercase pl-0.5 group-hover:text-white transition-colors">
+                   Furniture
+                 </span>
+               </div>
              </div>
              
              <p className="text-sm leading-relaxed mb-6">

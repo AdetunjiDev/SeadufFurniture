@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Phone, Menu, X } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Button } from './UI';
-import { COMPANY_PHONE, COMPANY_WHATSAPP, LOGO_URL } from '../constants';
+import { COMPANY_PHONE, COMPANY_WHATSAPP } from '../constants';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -71,13 +71,16 @@ export const Header: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
-            {/* Logo Area - Image Logo */}
-            <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={() => handleNavClick('Home')}>
-              <img 
-                src={LOGO_URL} 
-                alt="Seaduf Furniture" 
-                className="h-10 md:h-14 w-auto object-contain" 
-              />
+            {/* Logo Area - CSS Styled Text Logo */}
+            <div className="flex-shrink-0 flex items-center cursor-pointer group" onClick={() => handleNavClick('Home')}>
+              <div className="flex flex-col items-center sm:items-start leading-none">
+                <h1 className="font-heading font-bold text-3xl md:text-4xl text-brand-orange leading-none tracking-tighter group-hover:opacity-90 transition-opacity">
+                  Seaduf
+                </h1>
+                <span className="text-[10px] md:text-xs font-bold text-brand-dark tracking-[0.35em] uppercase pl-0.5 group-hover:text-orange-900 transition-colors">
+                  Furniture
+                </span>
+              </div>
             </div>
 
             {/* Desktop Nav */}
